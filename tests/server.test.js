@@ -112,7 +112,7 @@ describe('Request', () => {
     // not reassign the array.
     server.posts.splice(0, server.posts.length);
   });
-
+  
   describe(`${METHOD_POST} ${PATH}`, () => {
     it('Agrega un nuevo Post', () => {
       const post = { author: 'Juan', title: 'first title', contents: 'first contents' };
@@ -379,7 +379,6 @@ describe('Request', () => {
       return req(METHOD_DELETE, STATUS_USER_ERROR, { id: 1 });
     });
   });
-
   describe(`${METHOD_DELETE} /author`, () => {
     it('Informa que falta el parámetro `author`', () => {
       return req(METHOD_DELETE, STATUS_USER_ERROR);
